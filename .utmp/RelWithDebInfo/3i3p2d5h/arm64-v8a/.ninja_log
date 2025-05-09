@@ -1,0 +1,12 @@
+# ninja log v5
+183	7645	7684470411707263	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	fbd9fc970f2e53ab
+117	7756	7684470412189672	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	69d5d8cbc9882a
+42	7844	7684470413442453	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	96fbb440e491ac09
+149	8334	7684470418388559	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	617525ff3e13cbfb
+7846	9116	7684470426558875	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	6a8fe92d052cfe69
+85	9412	7684470429106577	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	30151b150886af14
+9119	10160	7684470436162009	C:/Users/joaco/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3i3p2d5h/obj/arm64-v8a/libswappywrapper.so	c625aeffdb96101a
+4	10230	7684470437884481	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	30d94e749e88bcf9
+7685	12971	7684470465431696	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	3fa9bbbd2793ae9f
+7758	13380	7684470469517255	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cd2e887f0e883495
+13383	13795	7684470473565617	C:/Users/joaco/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3i3p2d5h/obj/arm64-v8a/libgame.so	a2b87cbc49a0b80a
