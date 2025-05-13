@@ -1,0 +1,8 @@
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/CMakeFiles/edit_cache.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/CMakeFiles/rebuild_cache.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/GameActivity/CMakeFiles/game.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/.utmp/RelWithDebInfo/3g1m2x5b/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

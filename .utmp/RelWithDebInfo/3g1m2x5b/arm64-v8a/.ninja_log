@@ -1,0 +1,23 @@
+# ninja log v5
+3	1389	7684663646132638	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	689262ba7d317275
+17	160	7684663633932189	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ed2b58ec1d5ffcbd
+12	1195	7684663644232067	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	d594bd46cc0cb9aa
+0	1097	7684663643260352	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ebeeaaa799490bc0
+161	254	7684663634824901	H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3g1m2x5b/obj/arm64-v8a/libswappywrapper.so	62d1edfbebcb3a18
+6	1062	7684663642910129	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	35bc262bbfa66638
+10	1079	7684663643093281	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	44347e1f0d314a5b
+5	1140	7684663643689995	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	dc499fb87638ec1a
+15	1109	7684663643385849	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1bb875661405d21a
+8	1324	7684663645509638	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1b3389bc3911d9b2
+1389	1458	7684663646874024	H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3g1m2x5b/obj/arm64-v8a/libgame.so	c6443af4d006b2df
+23	182	7685140689605866	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ed2b58ec1d5ffcbd
+183	296	7685140690702012	H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3g1m2x5b/obj/arm64-v8a/libswappywrapper.so	62d1edfbebcb3a18
+15	1112	7685140698861761	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	44347e1f0d314a5b
+10	1113	7685140698876865	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	35bc262bbfa66638
+12	1141	7685140699141324	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ebeeaaa799490bc0
+17	1142	7685140699176519	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1bb875661405d21a
+8	1191	7685140699659897	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	dc499fb87638ec1a
+21	1266	7685140700398437	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	d594bd46cc0cb9aa
+19	1366	7685140701398300	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1b3389bc3911d9b2
+14	1449	7685140702215723	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	689262ba7d317275
+1449	1517	7685140702939612	H:/Facultad/MotoreII/PlataformeroMotores/MessiSimulator/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3g1m2x5b/obj/arm64-v8a/libgame.so	c6443af4d006b2df

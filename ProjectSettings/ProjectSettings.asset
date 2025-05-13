@@ -145,9 +145,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  - {fileID: -5965271319532831342, guid: ceed1b0c270cea44188953190fb0b7cc, type: 2}
-  - {fileID: 11400000, guid: 9b3a97612b446f64ab7e9f0256a9bfd1, type: 2}
-  - {fileID: 11400000, guid: 5066c80529342384b852f4f3da065f40, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -178,7 +175,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 34
+  AndroidBundleVersionCode: 35
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -189,7 +186,7 @@ PlayerSettings:
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
-  androidSplitApplicationBinary: 0
+  androidSplitApplicationBinary: 1
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 1
   strictShaderVariantMatching: 0
@@ -261,18 +258,18 @@ PlayerSettings:
   clonedFromGUID: 3df0038eaa8740a438c96d5b01ba661e
   templatePackageId: com.unity.template.mobile3d@6.0.0
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  useCustomMainManifest: 0
+  useCustomMainManifest: 1
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 1
   useCustomGradleSettingsTemplate: 1
-  useCustomProguardFile: 0
+  useCustomProguardFile: 1
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 2800000, guid: d5c2af4879a00934791332e5e3fb1b2d, type: 3}
-  AndroidKeystoreName: C:/Users/joaco/OneDrive/Documentos/Messi.keystore
+  AndroidKeystoreName: F:/Escritorio/Messi.keystore
   AndroidKeyaliasName: game2
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
@@ -929,11 +926,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 4bff1c37-88ae-4f3f-899a-5808dc66ab3c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: MessiSimulator
+  organizationId: pizzasteven
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
