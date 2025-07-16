@@ -17,7 +17,7 @@ public class GroundTile : MonoBehaviour
         int index = Random.Range(0, spawnPoints.Length);
         Transform spawnPoint = spawnPoints[index];
 
-        // Elegimos un obstáculo al azar
+        // Elegimos un obstáculo al azar.
         GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
 
         // Instanciamos
