@@ -19,6 +19,8 @@ public class GPGSManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 
     private void InitializeGPGS()
@@ -46,4 +48,5 @@ public class GPGSManager : MonoBehaviour
     {
         return isAuthenticated;
     }
+
 }

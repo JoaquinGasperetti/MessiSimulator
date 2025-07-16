@@ -3,6 +3,8 @@
 public class PlayerMovement : MonoBehaviour
 {
     public float forwardSpeed = 10f;
+    public float speedIncreaseRate = 1f; // Velocidad a la que aumenta
+    public float maxForwardSpeed = 50000f; // Velocidad máxima
     public float laneDistance = 3f;
     public float jumpForce = 7f;
     public float slideDuration = 0.5f;
@@ -26,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Aumentar gradualmente la velocidad hasta alcanzar la velocidad máxima
+        if (forwardSpeed < maxForwardSpeed)
+        {
+            forwardSpeed += speedIncreaseRate * Time.deltaTime;
+        }
+
         Vector3 velocity = rb.linearVelocity;
 
         // Movimiento hacia adelante constante
@@ -117,6 +125,12 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstaculo"))
         {
             FindObjectOfType<GameOverManager>().GameOver();
+        }
+
+        if (collision.gameObject.CompareTag("Colectable"))
+        {
+            ScoreManager.instancia.SumarBalonDeOro();
+            Destroy(collision.gameObject);
         }
     }
 }

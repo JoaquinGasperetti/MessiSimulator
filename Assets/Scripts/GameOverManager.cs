@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using GoogleMobileAds.Api;
+using System;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class GameOverManager : MonoBehaviour
 
     private InterstitialAd interstitialAd;
     private BannerView bannerView;
+    private RewardedInterstitialAd rewardedInterstitialAd;
 
     private string interstitialAdUnitId = "ca-app-pub-2266949018056491/6039459113";
     private string bannerAdUnitId = "ca-app-pub-2266949018056491/3860018339";
+    private string rewardedInterstitialAdUnitId = "ca-app-pub-2266949018056491/3956401736";
 
     void Start()
     {
@@ -22,10 +25,10 @@ public class GameOverManager : MonoBehaviour
         retryButton.onClick.AddListener(Retry);
         mainMenuButton.onClick.AddListener(GoToMainMenu);
 
-        // Inicializar anuncios
         MobileAds.Initialize(initStatus =>
         {
             LoadInterstitialAd();
+            LoadRewardedInterstitialAd();
             LoadBannerAd();
         });
     }
@@ -35,7 +38,6 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
 
-        // Mostrar el intersticial si está listo
         if (interstitialAd != null && interstitialAd.CanShowAd())
         {
             interstitialAd.Show();
@@ -44,19 +46,48 @@ public class GameOverManager : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene");
+        // Guardamos el puntaje antes de reiniciar la escena
+        PlayerPrefs.SetInt("PuntajeGuardado", ScoreManager.instancia.puntaje);
+
+        if (rewardedInterstitialAd != null && rewardedInterstitialAd.CanShowAd())
+        {
+            rewardedInterstitialAd.Show((Reward reward) =>
+            {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("SampleScene");
+            });
+
+            rewardedInterstitialAd.OnAdFullScreenContentClosed += () =>
+            {
+                LoadRewardedInterstitialAd();
+            };
+
+            rewardedInterstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
+            {
+                Debug.LogWarning("Fallo al mostrar anuncio recompensado: " + error.GetMessage());
+                LoadRewardedInterstitialAd();
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("SampleScene");
+            };
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     public void GoToMainMenu()
     {
+        // Eliminamos el puntaje guardado si el jugador vuelve al menú
+        PlayerPrefs.DeleteKey("PuntajeGuardado");
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
     private void LoadInterstitialAd()
     {
-        // Destruir si ya existe
         if (interstitialAd != null)
         {
             interstitialAd.Destroy();
@@ -74,6 +105,22 @@ public class GameOverManager : MonoBehaviour
             }
 
             interstitialAd = ad;
+        });
+    }
+
+    private void LoadRewardedInterstitialAd()
+    {
+        AdRequest adRequest = new AdRequest();
+
+        RewardedInterstitialAd.Load(rewardedInterstitialAdUnitId, adRequest, (RewardedInterstitialAd ad, LoadAdError error) =>
+        {
+            if (error != null || ad == null)
+            {
+                Debug.LogWarning("Error al cargar rewarded interstitial: " + error.GetMessage());
+                return;
+            }
+
+            rewardedInterstitialAd = ad;
         });
     }
 

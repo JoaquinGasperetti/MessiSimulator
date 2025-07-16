@@ -38,7 +38,7 @@ namespace GooglePlayGames {
 
         public const string ApplicationId = "688665364568"; // Filled in automatically
         public const string IosClientId = "__IOS_CLIENTID__"; // Filled in automatically
-        public const string WebClientId = ""; // Filled in automatically
+        public const string WebClientId = "688665364568-vlofnrfce00d486c29jij9gvvkp2r04j.apps.googleusercontent.com"; // Filled in automatically
         public const string NearbyConnectionServiceId = "com.HKemtrentainment.MessiSimulator";
 
         public static bool ApplicationIdInitialized() {

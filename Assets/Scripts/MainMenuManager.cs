@@ -1,40 +1,85 @@
 using GoogleMobileAds.Api;
+using GoogleMobileAds.Common;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
+using System;
 
 public class MainMenuManager : MonoBehaviour
 {
     public AudioSource backgroundMusic;
 
-    private string adUnitId = "ca-app-pub-2266949018056491/3860018339";
+    private string bannerAdUnitId = "ca-app-pub-2266949018056491/3860018339";
+    private string appOpenAdUnitId = "ca-app-pub-2266949018056491/8186512516";
+
     private BannerView bannerView;
+    private AppOpenAd appOpenAd;
+    private DateTime appOpenLoadTime;
 
     void Start()
     {
-        // Inicializar Google Mobile Ads
-        MobileAds.Initialize(initStatus => {
-            // Cargar y mostrar el banner una vez inicializado
+        // Inicializar anuncios
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+        MobileAds.Initialize(initStatus =>
+        {
             RequestBanner();
+            LoadAppOpenAd();
         });
 
-        // Reproducir música de fondo
         if (backgroundMusic != null && !backgroundMusic.isPlaying)
         {
             backgroundMusic.loop = true;
             backgroundMusic.Play();
         }
+
+        ShowAppOpenAdIfAvailable();
     }
 
     private void RequestBanner()
     {
-        // Crear el banner en la parte inferior de la pantalla
-        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
-
-        // Crear la solicitud del anuncio
+        bannerView = new BannerView(bannerAdUnitId, AdSize.Banner, AdPosition.Bottom);
         AdRequest adRequest = new AdRequest();
-
-        // Cargar el banner
         bannerView.LoadAd(adRequest);
+    }
+
+    private void LoadAppOpenAd()
+    {
+        AdRequest request = new AdRequest();
+        AppOpenAd.Load(appOpenAdUnitId, request, (AppOpenAd ad, LoadAdError error) =>
+        {
+            if (error != null)
+            {
+                Debug.LogWarning("Fallo al cargar App Open Ad: " + error.GetMessage());
+                return;
+            }
+
+            appOpenAd = ad;
+            appOpenLoadTime = DateTime.UtcNow;
+        });
+    }
+
+    private void ShowAppOpenAdIfAvailable()
+    {
+        if (appOpenAd != null && IsAdAvailable())
+        {
+            appOpenAd.Show();
+        }
+        else
+        {
+            LoadAppOpenAd();
+        }
+    }
+
+    private bool IsAdAvailable()
+    {
+        return appOpenAd != null && (DateTime.UtcNow - appOpenLoadTime).TotalHours < 4;
+    }
+
+    private void HandleAdClosed()
+    {
+        appOpenAd = null;
+        LoadAppOpenAd();
     }
 
     public void PlayGame()
@@ -44,19 +89,24 @@ public class MainMenuManager : MonoBehaviour
 
     public void RateApp()
     {
-        string appPackageName = "com.HKemtrentertainment.MessiSimulator";
-        string url = $"https://play.google.com/store/apps/details?id={appPackageName}&hl=es_AR";
-
-#if UNITY_ANDROID
+        string url = $"https://play.google.com/store/apps/details?id=com.HKemtrentainment.MessiSimulator&hl=es_AR";
         Application.OpenURL(url);
-#else
-        Debug.Log("Abrir calificación solo disponible en Android.");
-#endif
+    }
+
+    public void OpenLeaderboard()
+    {
+        if (Social.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI2JCevYUUEAIQAA");
+        }
+        else
+        {
+            Debug.Log("El usuario no está autenticado.");
+        }
     }
 
     void OnDestroy()
     {
-        // Destruir el banner al cerrar
         if (bannerView != null)
         {
             bannerView.Destroy();

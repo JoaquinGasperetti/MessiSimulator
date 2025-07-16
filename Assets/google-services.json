@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "907751509887",
+    "project_id": "messi-simulator-juegode-futbol",
+    "storage_bucket": "messi-simulator-juegode-futbol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907751509887:android:db8a1bf5e4d040ea35144a",
+        "android_client_info": {
+          "package_name": "com.HKemtrentainment.MessiSimulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt1wNhGWTRuOHgFeJ8FiAE2aZN64Ffuiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-2266949018056491~9667712933"
+    }
+  ],
+  "configuration_version": "1"
+}
