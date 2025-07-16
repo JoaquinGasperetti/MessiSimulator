@@ -87,6 +87,11 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void PlayTopDown()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void RateApp()
     {
         string url = $"https://play.google.com/store/apps/details?id=com.HKemtrentainment.MessiSimulator&hl=es_AR";

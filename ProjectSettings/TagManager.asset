@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstaculo
   - Colectable
+  - Pelota
   layers:
   - Default
   - TransparentFX
